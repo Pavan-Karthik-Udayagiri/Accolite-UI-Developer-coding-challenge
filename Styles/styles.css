@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+ 
+/* Base styles */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the entire document */
+    background-color: #ffffff; /* White background for a clean look */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+ 
+.wrapper {
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Stacks elements vertically */
+    width: 100%;
+    align-items: center; /* Centers child elements horizontally */
+}
+ 
+/* Navigation styles */
+nav {
+    width: 100%;
+    padding: 1rem; /* Adds spacing inside the nav */
+    padding-top: 1rem; /* Reduced from 1.5rem to make the navbar smaller */
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+}
+ 
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.25rem; /* Reduced from 0.5rem for a more compact design */
+    width: 100%;
+    max-width: 1200px; /* Prevents the logo container from becoming too wide */
+}
+ 
+.logo img {
+    max-width: 300px; /* Limits logo width */
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+}
+ 
+/* Main image container */
+.image-container {
+    width: 100%;
+    height: 450px; /* Reduced from 500px to shorten the image container */
+    overflow: hidden; /* Ensures images don’t overflow */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem; /* Adds spacing above */
+}
+ 
+picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    object-position: center; /* Centers the image */
+}
+ 
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .image-container {
+        height: 360px; /* Reduced from 400px to fit smaller screens */
+        margin-top: -1.5rem; /* Adjusted to balance layout */
+    }
+}
+ 
+@media screen and (max-width: 480px) {
+    .image-container {
+        height: 320px; /* Reduced from 350px to fit very small screens */
+        margin-top: -1.75rem; /* Adjusted for better positioning */
+    }
+}
+ 
+/* Investment heading styles */
+.investment-heading {
+    color: #00A67E; /* Green text color */
+    font-size: 2rem; /* Large font size */
+    text-align: center; /* Centers the text */
+    position: relative;
+    padding-bottom: 1rem;
+    margin: 2rem auto; /* Centers and adds spacing */
+    max-width: 600px; /* Limits width for better readability */
+}
+ 
+/* Underline effect below heading */
+.investment-heading::after {
+    content: ''; /* Creates a decorative underline */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the underline */
+    width: 100px;
+    height: 3px;
+    background-color: #00A67E; /* Matches the text color */
+}
+ 
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .investment-heading {
+        font-size: 1.8rem; /* Slightly smaller font */
+        margin: 1.5rem auto;
+        padding: 0 1rem 1rem;
+        max-width: 100%; /* Allows text to take full width */
+    }
+ 
+    .investment-heading::after {
+        width: 40px; /* Smaller underline */
+        height: 2px;
+    }
+}
+ 
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+    .investment-heading {
+        font-size: 1.5rem; /* Further reduced font size for smaller screens */
+        margin: 1rem auto;
+        padding: 0 0.8rem 0.8rem;
+    }
+ 
+    .investment-heading::after {
+        width: 30px; /* Even smaller underline */
+    }
+}
+ 
+/* Benefits Grid */
+.benefits-grid {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 2rem; /* Adds spacing between grid items */
+    max-width: 1200px; /* Limits the maximum width of the grid */
+    margin: 2rem auto; /* Centers the grid horizontally with top/bottom margin of 2rem */
+    padding: 0 2rem; /* Adds horizontal padding, which may affect alignment */
+    position: relative; /* Ensures positioning context for absolute elements if needed */
+}
+
+/* Mortgage Description */
+.mortgage-description {
+    max-width: 1200px; /* Limits the maximum width to maintain a readable layout */
+    margin: 2rem auto; /* Centers the section horizontally with top/bottom margin */
+    padding: 0 3rem; /* Adds horizontal padding for better readability */
+    text-align: left; /* Aligns text to the left */
+}
+
+/* Mortgage Description Paragraph Styling */
+.mortgage-description p {
+    color: #666; /* Sets text color to a dark gray for readability */
+    font-size: 1rem; /* Sets base font size */
+    line-height: 1.6; /* Improves readability by increasing line height */
+    font-weight: 300; /* Uses a light font weight */
+    margin-bottom: 2rem; /* Adds spacing below paragraphs */
+}
+
+/* Medium Screens (Tablets) */
+@media screen and (max-width: 768px) {
+    .mortgage-description {
+        padding: 0 1.5rem; /* Reduces horizontal padding on smaller screens */
+    }
+
+    .mortgage-description p {
+        font-size: 1.1rem; /* Increases font size slightly for better readability */
+    }
+}
+
+/* Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+    .mortgage-description {
+        padding: 0 1rem; /* Further reduces padding for smaller screens */
+    }
+
+    .mortgage-description p {
+        font-size: 1rem; /* Maintains base font size for readability */
+    }
+}
+
+/* Container for Centering the Button */
+.button-container {
+    display: flex; /* Uses flexbox to align items */
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers content vertically */
+    margin: 2rem auto; /* Centers the container with vertical spacing */
+}
+
+/* View Careers Button */
+.view-careers-btn {
+    display: inline-block; /* Makes the button behave like an inline-block element */
+    background-color: #F26B21; /* Sets the background color */
+    color: white; /* Sets text color to white */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; /* Uses system fonts */
+    font-size: 1.5rem; /* Sets font size */
+    padding: 0.75rem 2rem; /* Adds padding for a balanced button size */
+    text-decoration: none; /* Removes the default underline for links */
+    border: none; /* Removes border */
+    cursor: pointer; /* Changes cursor to pointer to indicate clickability */
+    transition: background-color 0.3s ease; /* Smooth transition effect on hover */
+    font-weight: 300; /* Uses a light font weight */
+    text-align: center; /* Centers text inside the button */
+}
+
+/* Hover Effect for View Careers Button */
+.view-careers-btn:hover {
+    background-color: #D95A15; /* Darkens the button color on hover */
+}
+
+/* Medium Screens (Tablets) */
+@media screen and (max-width: 768px) {
+    .view-careers-btn {
+        font-size: 1.1rem; /* Decreases font size for better responsiveness */
+        padding: 0.6rem 1.75rem; /* Adjusts padding to keep button size balanced */
+    }
+}
+
+/* Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+    .view-careers-btn {
+        font-size: 1rem; /* Reduces font size for better fit on small screens */
+        padding: 0.5rem 1.5rem; /* Adjusts padding to maintain proportions */
+        width: calc(100% - 2rem); /* Makes button width responsive while keeping margin */
+        margin: 0 1rem; /* Adds horizontal margin */
+    }
+
+    .button-container {
+        margin: 1.5rem auto; /* Reduces margin for better spacing */
+    }
+}
+ 
+/* Citizens Advantage Title Styling */
+.citizens-advantage {
+    color: #00A67E;  /* Sets text color to Citizens brand green */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; /* Uses system fonts for consistency */
+    font-size: 2rem; /* Sets the font size */
+    text-align: center; /* Centers text */
+    position: relative; /* Required for positioning the decorative line */
+    padding-bottom: 1rem; /* Adds spacing below the text */
+    margin: 2rem auto; /* Centers the element with vertical spacing */
+    max-width: 800px; /* Limits the maximum width for better readability */
+}
+
+/* Decorative Underline for Citizens Advantage */
+.citizens-advantage::after {
+    content: ''; /* Creates an empty pseudo-element */
+    position: absolute; /* Positions the element relative to .citizens-advantage */
+    bottom: 0; /* Aligns it to the bottom of the parent */
+    left: 50%; /* Centers the element horizontally */
+    transform: translateX(-50%); /* Ensures perfect centering */
+    width: 100px; /* Sets the underline width */
+    height: 3px; /* Sets the underline thickness */
+    background-color: #00A67E; /* Matches Citizens brand green */
+}
+
+/* Medium Screens (Tablets) */
+@media screen and (max-width: 768px) {
+    .citizens-advantage {
+        font-size: 2rem; /* Keeps the font size the same */
+        padding: 0 1.5rem 1rem; /* Adjusts padding for smaller screens */
+    }
+
+    .citizens-advantage::after {
+        width: 60px; /* Reduces the width of the underline */
+    }
+}
+
+/* Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+    .citizens-advantage {
+        font-size: 2rem; /* Keeps the font size unchanged */
+        padding: 0 1rem 0.8rem; /* Adjusts padding for a more compact layout */
+    }
+
+    .citizens-advantage::after {
+        width: 50px; /* Further reduces the underline width */
+        height: 2px; /* Reduces the thickness of the underline */
+    }
+}
+
+/* Benefits Grid Layout */
+.benefits-grid {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 2rem; /* Adds spacing between grid items */
+    max-width: 1200px; /* Limits the maximum width of the grid */
+    margin: 2rem auto; /* Centers the grid with vertical spacing */
+    padding: 0 2rem; /* Adds horizontal padding */
+    position: relative; /* Ensures relative positioning for potential absolute elements */
+    width: 100%; /* Ensures it takes the full available width */
+}
+
+/* Individual Benefit Sections */
+.benefit-section {
+    padding: 1.5rem; /* Adds padding inside each section */
+    position: relative; /* Ensures proper positioning for pseudo-elements */
+}
+
+/* Vertical Divider for Specific Benefit Sections (Desktop Only) */
+.benefit-section:nth-child(2)::before,
+.benefit-section:nth-child(4)::before {
+    content: ''; /* Creates an empty pseudo-element for the divider */
+    position: absolute; /* Positions it relative to the .benefit-section */
+    top: 20%; /* Starts the line slightly below the top */
+    bottom: 20%; /* Ends the line before reaching the bottom */
+    left: -1rem; /* Positions the line slightly to the left */
+    width: 1px; /* Sets the divider width */
+    background-color: #E0E0E0; /* Light gray color for subtle separation */
+}
+ 
+/* Styles for the benefit title */
+.benefit-title {
+    color: #00A67E; /* Sets the text color to greenish teal */
+    font-size: 1.25rem; /* Sets the font size to 1.25rem */
+    margin-bottom: 1rem; /* Adds space below the title */
+    font-weight: normal; /* Sets the font weight to normal */
+}
+
+/* Styles for the benefit description */
+.benefit-description {
+    color: #666; /* Sets the text color to gray */
+    font-size: 1rem; /* Sets the font size to 1rem */
+    line-height: 1.6; /* Sets the line spacing to 1.6 times the font size */
+    margin-bottom: 1rem; /* Adds space below the description */
+    font-weight: 300; /* Sets the font weight to a light style */
+}
+
+/* Styles for the benefit link */
+.benefit-link {
+    color: #24a600; /* Sets the text color to a green shade */
+    text-decoration: none; /* Removes the default underline */
+    display: inline-flex; /* Aligns elements inline with flex properties */
+    align-items: center; /* Centers items vertically */
+    font-size: 1.1rem; /* Sets the font size to 1.1rem */
+}
+
+/* Hover effect for the benefit link */
+.benefit-link:hover {
+    text-decoration: underline; /* Underlines the text on hover */
+}
+
+/* Adds an arrow symbol after the benefit link */
+.benefit-link::after {
+    content: "›"; /* Inserts a right arrow character */
+    margin-left: 0.5rem; /* Adds space between the text and the arrow */
+    font-size: 1.1rem; /* Sets the font size to match the text */
+}
+
+/* Responsive styles for medium screens (up to 768px) */
+@media screen and (max-width: 768px) {
+    .benefits-grid {
+        gap: 1.5rem; /* Increases the spacing between elements */
+        padding: 0 1.5rem; /* Adds horizontal padding */
+    }
+
+    .benefit-title {
+        font-size: 1.5rem; /* Increases the font size for better readability */
+    }
+
+    .benefit-description {
+        font-size: 1rem; /* Maintains the font size */
+    }
+}
+
+/* Responsive styles for small screens (up to 480px) */
+@media screen and (max-width: 480px) {
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Displays items in a single column */
+        gap: 0; /* Removes spacing between items */
+        padding: 0 1rem; /* Reduces horizontal padding */
+    }
+
+    .benefit-section {
+        padding: 1.5rem 1rem; /* Adjusts padding for smaller screens */
+    }
+
+    /* Hides vertical separator lines on mobile */
+    .benefit-section:nth-child(2)::before,
+    .benefit-section:nth-child(4)::before {
+        display: none; /* Removes the before pseudo-element */
+    }
+
+    /* Adds horizontal lines between sections for mobile */
+    .benefit-section:not(:first-child) {
+        border-top: 1px solid #E0E0E0; /* Adds a light gray border */
+    }
+
+    .benefit-title {
+        font-size: 1.25rem; /* Adjusts the font size for mobile */
+    }
+}
+
+/* Wrapper for the banner section */
+.banner-wrapper {
+    max-width: 1200px; /* Sets the maximum width to 1200px */
+    margin: 2rem auto; /* Centers the wrapper with top/bottom margin of 2rem */
+    padding: 0 2rem; /* Adds horizontal padding of 2rem */
+    width: 100%; /* Ensures it takes the full available width */
+}
+
+/* Container for the banner */
+.banner-container {
+    max-width: 1200px; /* Sets the maximum width to 1200px */
+    margin: 0 auto; /* Centers the container */
+    border-radius: 4px; /* Rounds the corners by 4px */
+    overflow: hidden; /* Prevents content from overflowing */
+    width: 100%; /* Ensures it takes the full available width */
+}
+
+/* Styles for the header banner */
+.header-banner {
+    background-color: #008756; /* Sets a green background color */
+    padding: 1rem; /* Adds padding of 1rem */
+    text-align: center; /* Centers the text inside the banner */
+}
+
+/* Styles for the heading inside the header banner */
+.header-banner h1 {
+    color: white; /* Sets the text color to white */
+    font-size: 1.5rem; /* Sets the font size to 1.5rem */
+    font-weight: normal; /* Sets the font weight to normal */
+    margin: 0; /* Removes default margin */
+}
+
+/* Styles for the info banner */
+.info-banner {
+    background-color: #f0f7f4; /* Sets a light greenish background color */
+    padding: 2rem; /* Adds padding of 2rem */
+}
+
+/* Styles for paragraphs inside the info banner */
+.info-banner p {
+    color: #666; /* Sets the text color to gray */
+    line-height: 1.6; /* Sets the line spacing to 1.6 times the font size */
+    margin: 0; /* Removes default margin */
+    font-size: 1rem; /* Sets the font size to 1rem */
+}
+
+/* Responsive styles for medium screens (up to 768px) */
+@media screen and (max-width: 768px) {
+    .banner-wrapper {
+        padding: 0 1.5rem; /* Reduces horizontal padding for medium screens */
+    }
+
+    .header-banner h1 {
+        font-size: 1.25rem; /* Decreases font size for better readability */
+    }
+
+    .info-banner p {
+        font-size: 0.9rem; /* Slightly reduces font size for medium screens */
+    }
+}
+
+/* Responsive styles for small screens (up to 480px) */
+@media screen and (max-width: 480px) {
+    .banner-wrapper {
+        padding: 0 1rem; /* Further reduces horizontal padding for small screens */
+    }
+
+    .header-banner h1 {
+        font-size: 1.1rem; /* Adjusts font size for smaller screens */
+    }
+
+    .info-banner p {
+        font-size: 0.85rem; /* Further reduces font size for smaller screens */
+    }
+}
+
+/* Wrapper for the testimonials section */
+.testimonials-wrapper {
+    max-width: 1200px; /* Sets the maximum width of the section */
+    margin: 2rem auto; /* Centers the section with a top/bottom margin of 2rem */
+    padding: 0 2rem; /* Adds horizontal padding of 2rem */
+}
+
+/* Container for testimonials */
+.testimonials-container {
+    max-width: 1200px; /* Ensures the container does not exceed 1200px */
+    margin: 0 auto; /* Centers the container */
+    display: grid; /* Uses a grid layout */
+    grid-template-columns: 0.85fr 1.2fr 0.85fr; /* Defines three columns with different widths */
+    gap: 3rem; /* Sets spacing between grid items */
+}
+
+/* Individual testimonial card */
+.testimonial-card {
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Arranges elements in a vertical column */
+    align-items: center; /* Centers items horizontally */
+    text-align: center; /* Centers text */
+    height: 100%; /* Ensures card takes full height */
+    padding: 2rem; /* Adds padding inside the card */
+    border-radius: 10px; /* Rounds the corners */
+}
+
+/* Wrapper for testimonial content */
+.content-wrapper {
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Arranges content in a vertical column */
+    flex-grow: 1; /* Allows content to grow and fill space */
+    justify-content: space-between; /* Distributes space evenly */
+    width: 100%; /* Ensures full width */
+}
+
+/* Container for the avatar image */
+.avatar-container {
+    width: 180px; /* Sets width of the avatar */
+    height: 180px; /* Sets height of the avatar */
+    border-radius: 50%; /* Makes the avatar circular */
+    overflow: hidden; /* Hides overflow content */
+    margin-bottom: 1.5rem; /* Adds space below the avatar */
+    flex-shrink: 0; /* Prevents the avatar from shrinking */
+}
+
+/* Styles for the avatar image */
+.avatar {
+    width: 100%; /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fills the container */
+    object-fit: cover; /* Ensures the image is cropped properly */
+}
+
+/* Styles for the testimonial quote */
+.quote {
+    color: #666; /* Sets text color to gray */
+    font-style: italic; /* Makes the text italic */
+    margin: 0 0 1.5rem 0; /* Adds margin below the quote */
+    font-size: 1rem; /* Sets font size to 1rem */
+    line-height: 1.5; /* Adjusts line spacing */
+    flex-grow: 1; /* Allows the quote to grow and fill space */
+}
+
+/* Styles for the author of the testimonial */
+.author {
+    color: #00A67E; /* Sets text color to green */
+    margin-top: auto; /* Pushes the author details to the bottom */
+}
+
+/* Styles for the author's title */
+.title {
+    margin-top: 0.5rem; /* Adds spacing above the title */
+    font-size: 0.9rem; /* Sets a smaller font size for readability */
+}
+
+/* Responsive Design for medium screens (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .testimonials-container {
+        grid-template-columns: 1fr; /* Switches to a single-column layout */
+        gap: 3rem; /* Maintains spacing between testimonials */
+    }
+
+    .testimonial-card {
+        max-width: 700px; /* Limits width for readability */
+        margin: 0 auto; /* Centers the testimonial card */
+    }
+}
+
+/* Responsive Design for smaller screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .testimonials-wrapper {
+        padding: 0 1.5rem; /* Reduces horizontal padding */
+    }
+
+    .avatar-container {
+        width: 160px; /* Reduces avatar size for smaller screens */
+        height: 160px;
+    }
+
+    .quote {
+        font-size: 0.95rem; /* Slightly reduces font size */
+    }
+}
+
+/* Responsive Design for mobile screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .testimonials-wrapper {
+        padding: 0 1rem; /* Further reduces padding for small screens */
+    }
+
+    .avatar-container {
+        width: 140px; /* Further reduces avatar size */
+        height: 140px;
+    }
+
+    .quote {
+        font-size: 0.9rem; /* Adjusts font size for smaller screens */
+        line-height: 1.4; /* Reduces line height for compact text */
+    }
+
+    .name {
+        font-size: 1rem; /* Adjusts font size for readability */
+    }
+
+    .title {
+        font-size: 0.85rem; /* Slightly reduces font size for the title */
+    }
+}
+ 
+/* Footer border - adds a top border to the footer */
+.footer-border {
+    width: 100%; /* Ensures it spans the full width */
+    border-top: 2px solid #00a65b; /* Green border for a sleek divider */
+}
+
+/* Main footer container */
+.footer-container {
+    max-width: 1200px; /* Restricts the max width for better alignment */
+    margin: 10px auto; /* Centers the footer and adds vertical spacing */
+    padding: 20px 30px; /* Adds inner spacing (left padding increased for alignment) */
+    font-family: Arial, sans-serif; /* Ensures a clean and professional font */
+}
+
+/* Social icons section */
+.social-icons {
+    margin-top: 20px; /* Adds spacing above the icons */
+    margin-bottom: 20px; /* Adds spacing below the icons */
+    text-align: left; /* Aligns icons to the left */
+}
+
+/* Social media icons container */
+.social-icons a {
+    display: inline-flex; /* Uses flexbox for proper alignment */
+    align-items: center; /* Centers icons vertically */
+    justify-content: center; /* Centers icons horizontally */
+    margin-right: 15px; /* Adds spacing between icons */
+    width: 40px; /* Sets a uniform size */
+    height: 40px;
+    border-radius: 50%; /* Makes them circular */
+    text-decoration: none; /* Removes underline from links */
+    transition: all 0.3s; /* Smooth hover effects */
+}
+
+/* Social media icon styles */
+.social-icons a i {
+    font-size: 20px; /* Sets icon size */
+    color: white; /* Makes icons white for contrast */
+}
+
+/* Individual social media brand colors */
+.social-icons .facebook {
+    background-color: #4267B2; /* Facebook blue */
+}
+
+.social-icons .twitter {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
+.social-icons .linkedin {
+    background-color: #0077B5; /* LinkedIn blue */
+}
+
+.social-icons .youtube {
+    background-color: #FF0000; /* YouTube red */
+}
+
+/* Hover effect on social media icons */
+.social-icons a:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+    transform: translateY(-2px); /* Adds a floating effect */
+}
+
+/* Footer policy text */
+.policy-text {
+    font-size: 14px; /* Sets a small but readable font size */
+    line-height: 1.5; /* Improves readability */
+    color: #666; /* Light gray for subtle contrast */
+    margin-bottom: 20px; /* Adds space below the text */
+}
+
+/* Links within the policy text */
+.policy-text a {
+    color: #666; /* Keeps link color consistent */
+    text-decoration: underline; /* Adds emphasis */
+}
+
+/* Underline text styling */
+.underline-text {
+    text-decoration: none; /* Removes default underline */
+}
+
+/* Footer links (Terms, Privacy, etc.) */
+.footer-links {
+    font-size: 14px; /* Small font size for subtle look */
+    color: #000; /* Black text for readability */
+}
+
+/* Styling for footer links */
+.footer-links a {
+    color: #000; /* Keeps links black */
+    text-decoration: none; /* Removes default underline */
+    margin-right: 15px; /* Spaces out the links */
+}
+
+/* Hover effect for footer links */
+.footer-links a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
